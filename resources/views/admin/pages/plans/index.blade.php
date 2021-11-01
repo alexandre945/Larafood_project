@@ -12,11 +12,51 @@
 @section('title', 'Planos')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('bread.index') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" class="">Planos</a></li>
+    </ol>
+
+    <h1>Planos <a href="{{ route('plans.create')}}" class="btn btn-dark">ADD <i class="fas fa-plus"></i></a></h1>
 @stop
 
 @section('content')
-    <p>Listagen de Planos</p>
+   <div class="card">
+       <div class="header">
+           <form action="{{ route('plans.search')}}" method="POST" class="form form-inline">
+               @csrf
+               <input type="text"  name="filter" placeholder="Nome" class="form-control">
+
+               <button type="submit" class="btn btn-dark">Filtrar<br><i class="fas fa-user-plus"></i> </button>
+           </form>
+       </div>
+       <div class="card-body">
+         <table class="table table-condensed">
+             <thead>
+                 <tr>
+                     <th>Nome</th>
+                     <th>Preço</th>
+                     <th style="width: 50px">Açôes</th>
+                 </tr>
+             </thead>
+             <tbody>
+                @foreach ($plans as $plan)
+                    <tr>
+                        <td> {{ $plan->name }}</td>
+                        <td> {{ $plan->price }}</td>
+                        <td style="width: 10px;"><a href="{{ route('plans.show',$plan->url)}}" class="btn btn-warning">Ver</a>
+                        </td>
+                        <td style="width: 10px;"><a href="{{ route('plans.edit',$plan->url)}}" class="btn btn-success">Editar</a> </td>
+                    </tr>
+                @endforeach
+             </tbody>
+
+         </table>
+       </div>
+
+   </div>
 @stop
 
 
