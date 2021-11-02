@@ -11,7 +11,7 @@
 @stop
 
 @section('content')
-   <div class="card">
+   <div class="card" style="background-color: grey">
        <div class="card-body">
            <ol class="list-group list-group-numbered">
                <li>

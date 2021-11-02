@@ -69,7 +69,7 @@ public function __construct(Plan $plan)
                 return view('admin.pages.plans.index', compact('plans'));
             }
 
-                public function  edit(StoreUpdatePlan $request, $url)
+                public function  edit(Request $request, $url)
             {
                 $plan = $this->repository->where('url',$url)->first();
 
@@ -93,4 +93,6 @@ public function __construct(Plan $plan)
 
 
                }
+
+
 }

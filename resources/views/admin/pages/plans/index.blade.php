@@ -23,7 +23,7 @@
 @stop
 
 @section('content')
-   <div class="card">
+   <div class="card" style="background-color: grey">
        <div class="header">
            <form action="{{ route('plans.search')}}" method="POST" class="form form-inline">
                @csrf
@@ -32,13 +32,13 @@
                <button type="submit" class="btn btn-dark">Filtrar<br><i class="fas fa-user-plus"></i> </button>
            </form>
        </div>
-       <div class="card-body">
+       <div class="card-body" >
          <table class="table table-condensed">
              <thead>
                  <tr>
                      <th>Nome</th>
                      <th>Preço</th>
-                     <th style="width: 50px">Açôes</th>
+                     <th style="width: 150px">Açôes</th>
                  </tr>
              </thead>
              <tbody>
@@ -46,9 +46,9 @@
                     <tr>
                         <td> {{ $plan->name }}</td>
                         <td> {{ $plan->price }}</td>
-                        <td style="width: 10px;"><a href="{{ route('plans.show',$plan->url)}}" class="btn btn-warning">Ver</a>
+                        <td><a href="{{ route('plans.show',$plan->url)}}" class="btn btn-warning">Ver</a>
+                            <a href="{{ route('plans.edit',$plan->url)}}" class="btn btn-success">Editar</a>
                         </td>
-                        <td style="width: 10px;"><a href="{{ route('plans.edit',$plan->url)}}" class="btn btn-success">Editar</a> </td>
                     </tr>
                 @endforeach
              </tbody>
