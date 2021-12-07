@@ -1,9 +1,16 @@
 <?php
+
+use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\PostController;
+use App\models\models\Finance;
 use App\Http\Controllers\Admin\PlanController;
 use Illuminate\Support\Facades\Route;
 
 
+route::post('/plans/paypool',[FinanceController::class, 'store'])->name('plans.paypool');
+// route::get('/plans/pay', [FinanceControll::class, 'pay'])->name('plans.pay');
+route::get('/plans/finance', [FinanceController::class, 'index'])->name('plans-finance');
+route::get('plans/finance/create', [FinanceController::class, 'create'])->name('plans-finace-create');
 
 route::get('/plans/create', [PlanController::class, 'create'])->name('plans.create');
 route::put('/plans/update/{url}',[PlanController::class, 'update'])->name('plans.update');

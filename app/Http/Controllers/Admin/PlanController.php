@@ -93,6 +93,24 @@ public function __construct(Plan $plan)
 
 
                }
+               public function finance()
+               {
+                   $plans = $this->repository->all();
+                   return view('admin.pages.finance', compact ('plans'));
+               }
+               public function pay()
+               {
+                  return view('admin.pages.pay');
+               }
+               public function paypool( StoreUpdatePlan $request, $url)
+               {
+                  
+                   $data = $request->all();
+                    $data['url'] = Str::kebab($request->name,);
+                   $this->repository->create($data);
+   
+                   return view('admin.pages.paypool');
+               }
 
 
 }

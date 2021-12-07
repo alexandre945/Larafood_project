@@ -226,7 +226,7 @@ return [
 
     'menu' => [
         [
-            'text' => 'Planos ',
+            'text' => 'Clientes ',
             'url'  => 'plans',
             'icon' =>  'fas fa-list-alt'
 

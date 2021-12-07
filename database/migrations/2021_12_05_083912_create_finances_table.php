@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlansTable extends Migration
+class CreateFinancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreatePlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('plans', function (Blueprint $table) {
+        Schema::create('finances', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('url')->nullable();
-            $table->double('price',10,2);
-            $table->string('description')->nullable();
+            $table->decimal('price',10,2);
+            $table->date('date')->nullable();
+            $table->date('month')->nullable();
+            $table->year('year')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreatePlansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plans');
+        Schema::dropIfExists('finances');
     }
 }

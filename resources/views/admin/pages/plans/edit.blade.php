@@ -3,7 +3,7 @@
 @section('title', 'Editar Plano { $plan->name }')
 
 @section('content_header')
-    <h1><b>Editar Plano</b></h1>
+    <h1><b>Editar Cliente</b></h1>
 @stop
 
 @section('content')
