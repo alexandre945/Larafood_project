@@ -16,27 +16,14 @@
     @section('content_header')
 
     <div class="header" style="background-color: grey">
-        <ol class="breadcrumb">
-            <!-- <li class="breadcrumb-item"><a href="{{ route('bread.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" class="">Planos</a></li> -->
-        </ol>
-
-        <h1>Clientes<a href="{{ route('plans.create')}}" class="btn btn-dark">ADD <i class="fas fa-plus"></i></a></h1>
-
+        <h1>Pagamentos<a href="{{ route('plans-finace-create')}}" class="btn btn-dark">ADD <i
+                    class="fas fa-plus"></i></a></h1>
     </div>
 
     @stop
 
     @section('content')
     <div class="card" style="background-color: grey">
-        <div class="header">
-            <form action="{{ route('plans.search')}}" method="POST" class="form form-inline">
-                @csrf
-                <input type="text" name="filter" placeholder="Nome" class="form-control">
-
-                <button type="submit" class="btn btn-dark">Filtrar<br><i class="fas fa-user-plus"></i> </button>
-            </form>
-        </div>
         <div class="card-body">
             <table class="table table-condensed">
                 <thead>
@@ -44,8 +31,8 @@
                         <th>id</th>
                         <th>Nome</th>
                         <th>Preço</th>
-                        <th>data</th>
-                        <th>Açôes</th>
+                        <th>data/pagamento</th>
+                        <th style="width: 150px;">Açôes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,8 +42,18 @@
                         <td> {{ $finance->name }}</td>
                         <td> {{ $finance->price }}</td>
                         <td> {{ $finance->date }}</td>
-                        <td> <a href="#"class=
-                        "btn btn-danger">Excluir</a></td>
+                        <td>
+                            <form action="{{ route('finance.destroy',$finance->id )}}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Deletar <br><i
+                                        class="fas fa-trash-alt"></i></button>
+                            </form>
+                            <!-- <button type="" class="btn btn-warning">EDITA</button> -->
+
+                        </td>
+
+
                     </tr>
                     @endforeach
                 </tbody>

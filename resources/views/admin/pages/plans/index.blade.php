@@ -19,6 +19,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('bread.index') }}">Dashboard</a></li>
             <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" class="">Planos</a></li>
+            <li class="breadcrumb-item active"><a href="{{ route('plans-finance') }}" class="">Pagamentos</a></li>
         </ol>
 
         <div class="d-flex justify-content-between">

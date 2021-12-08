@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 route::post('/plans/paypool',[FinanceController::class, 'store'])->name('plans.paypool');
-// route::get('/plans/pay', [FinanceControll::class, 'pay'])->name('plans.pay');
+route::delete('/finance/destroy/{id}', [FinanceController::class, 'destroy'])->name('finance.destroy');
 route::get('/plans/finance', [FinanceController::class, 'index'])->name('plans-finance');
 route::get('plans/finance/create', [FinanceController::class, 'create'])->name('plans-finace-create');
 
