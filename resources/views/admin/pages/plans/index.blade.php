@@ -15,20 +15,21 @@
 
     @section('content_header')
 
-    <div class="header" style="background-color: grey">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('bread.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" class="">Planos</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('plans-finance') }}" class="">Pagamentos</a></li>
+    <div class="header" style="background-color: teal">
+        <ol class="breadcrumb" style="padding-left: 30px;">
+            <li class="breadcrumb-item"><a href="{{ route('bread.index') }}" style="color:black">Dashboard</a></li>
+            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Planos</a></li>
+            <li class="breadcrumb-item active"><a href="{{ route('plans-finance') }}" style="color:black">Pagamentos</a>
+            </li>
         </ol>
 
-        <div class="d-flex justify-content-between">
-            <div>
-                <h1>Clientes<a href="{{ route('plans.create')}}" class="btn btn-dark">ADD <i
+        <div class="d-flex justify-content-between" style="padding-bottom: 10px;">
+            <div >
+                <h1 style="padding-left: 30px;">Clientes<a href="{{ route('plans.create')}}" class="btn btn-dark">ADD <i
                             class="fas fa-plus"></i></a></h1>
             </div>
             <div>
-                <h1>Pagamentos<a href="{{ route('plans-finace-create')}}" class="btn btn-dark">ADD <i
+                <h1 style="padding-right: 40px;">Pagamentos<a href="{{ route('plans-finace-create')}}" class="btn btn-dark">ADD <i
                             class="fas fa-plus"></i></a></h1>
             </div>
         </div>
@@ -40,14 +41,9 @@
     @stop
 
     @section('content')
-    <div class="card" style="background-color: grey">
+    <div class="card" style="background-color: teal">
         <div class="header">
-            <form action="{{ route('plans.search')}}" method="POST" class="form form-inline">
-                @csrf
-                <input type="text" name="filter" placeholder="Nome" class="form-control">
 
-                <button type="submit" class="btn btn-dark">Filtrar<br><i class="fas fa-user-plus"></i> </button>
-            </form>
         </div>
         <div class="card-body">
             <table class="table table-condensed">

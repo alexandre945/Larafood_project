@@ -15,15 +15,25 @@
 
     @section('content_header')
 
-    <div class="header" style="background-color: grey">
-        <h1>Pagamentos<a href="{{ route('plans-finace-create')}}" class="btn btn-dark">ADD <i
+    <div class="header" style="background-color: teal">
+        <h1 style="padding-top: 10px;">Pagamentos<a href="{{ route('plans-finace-create')}}" class="btn btn-dark">ADD <i
                     class="fas fa-plus"></i></a></h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('bread.index') }}" style="color:black">Dashboard</a></li>
+            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Planos</a></li>
+            <li class="breadcrumb-item active"><a href="{{ route('plans-finance') }}" style="color:black">Pagamentos</a>
+            </li>
+        </ol>
+
     </div>
+
+
+
 
     @stop
 
     @section('content')
-    <div class="card" style="background-color: grey">
+    <div class="card" style="background-color: teal">
         <div class="card-body">
             <table class="table table-condensed">
                 <thead>
