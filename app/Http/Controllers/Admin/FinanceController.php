@@ -69,7 +69,11 @@ class FinanceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $finance = $this->repository->where('id',$id)->first();
+        
+        
+
+        return view('admin.pages.editar', compact('finance'));
     }
 
     /**
@@ -79,9 +83,14 @@ class FinanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id)    
     {
-        //
+        $finance = $this->repository->find($id);
+        
+        $finance->update($request->all());
+
+        return redirect()->route('plans-finance');
+           
     }
 
     /**

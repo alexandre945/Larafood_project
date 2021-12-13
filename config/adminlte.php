@@ -231,6 +231,12 @@ return [
             'icon' =>  'fas fa-list-alt'
 
         ],
+        [
+            'text' => 'Pagamentos ',
+            'url'  => 'plans/finance',
+            'icon' =>  'fas fa-list-alt'
+
+        ],
 
     ],
 

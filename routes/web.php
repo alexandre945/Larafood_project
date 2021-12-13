@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\PlanController;
 use Illuminate\Support\Facades\Route;
 
 
+route::put('/finance/update/{id}',[FinanceController::class, 'update'])->name('finance.update');
+route::get('/plans/edits/{id}', [FinanceController::class, 'edit'])->name('plans.edits');
 route::post('/plans/paypool',[FinanceController::class, 'store'])->name('plans.paypool');
 route::delete('/finance/destroy/{id}', [FinanceController::class, 'destroy'])->name('finance.destroy');
 route::get('/plans/finance', [FinanceController::class, 'index'])->name('plans-finance');

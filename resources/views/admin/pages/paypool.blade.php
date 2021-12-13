@@ -42,7 +42,7 @@
                         <th>Nome</th>
                         <th>Preço</th>
                         <th>data/pagamento</th>
-                        <th style="width: 150px;">Açôes</th>
+                        <th style="width: 100px;">Açôes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,14 +56,14 @@
                             <form action="{{ route('finance.destroy',$finance->id )}}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger">Deletar <br><i
-                                        class="fas fa-trash-alt"></i></button>
+                                <button type="submit" class="btn btn-danger">Deletar</button>
                             </form>
-                            <!-- <button type="" class="btn btn-warning">EDITA</button> -->
-
                         </td>
-
-
+                        <td>
+                            <button class="btn btn-success">
+                                <a href="{{route('plans.edits',$finance->id )}}">Editar</a>
+                            </button>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

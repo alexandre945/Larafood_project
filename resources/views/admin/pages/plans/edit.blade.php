@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-   <div class="card" style="background-color: grey">
+   <div class="card" style="background-color: teal">
        <div class="card-body">
             <form action="{{ route('plans.update', $plan->url)}}" method="POST">
                 @csrf
