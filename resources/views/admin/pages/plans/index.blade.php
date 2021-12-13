@@ -18,19 +18,20 @@
     <div class="header" style="background-color: teal">
         <ol class="breadcrumb" style="padding-left: 30px;">
             <li class="breadcrumb-item"><a href="{{ route('bread.index') }}" style="color:black">Dashboard</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Planos</a></li>
+            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Clientes</a>
+            </li>
             <li class="breadcrumb-item active"><a href="{{ route('plans-finance') }}" style="color:black">Pagamentos</a>
             </li>
         </ol>
 
         <div class="d-flex justify-content-between" style="padding-bottom: 10px;">
-            <div >
+            <div>
                 <h1 style="padding-left: 30px;">Clientes<a href="{{ route('plans.create')}}" class="btn btn-dark">ADD <i
                             class="fas fa-plus"></i></a></h1>
             </div>
             <div>
-                <h1 style="padding-right: 40px;">Pagamentos<a href="{{ route('plans-finace-create')}}" class="btn btn-dark">ADD <i
-                            class="fas fa-plus"></i></a></h1>
+                <h1 style="padding-right: 40px;">Pagamentos<a href="{{ route('plans-finace-create')}}"
+                        class="btn btn-dark">ADD <i class="fas fa-plus"></i></a></h1>
             </div>
         </div>
 
@@ -49,18 +50,21 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
+                        <th>id</th>
                         <th>Nome</th>
                         <th>Preço</th>
-                        <th>id</th>
-                        <th style="width: 150px">Açôes</th>
+                        <th>data</th>
+                        <th>Açôes</th>
+
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($plans as $plan)
                     <tr>
+                        <td> {{ $plan->id }}</td>
                         <td> {{ $plan->name }}</td>
                         <td> {{ $plan->price }}</td>
-                        <td> {{ $plan->id }}</td>
+                        <td> {{ $plan->created_at }}</td>
                         <td>
                             <a href="{{ route('plans.show',$plan->url)}}" class="btn btn-warning">Ver</a>
                             <a href="{{ route('plans.edit',$plan->url)}}" class="btn btn-success">Editar</a>

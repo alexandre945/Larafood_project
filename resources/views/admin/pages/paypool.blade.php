@@ -20,7 +20,8 @@
                     class="fas fa-plus"></i></a></h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('bread.index') }}" style="color:black">Dashboard</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Planos</a></li>
+            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Clientes</a>
+            </li>
             <li class="breadcrumb-item active"><a href="{{ route('plans-finance') }}" style="color:black">Pagamentos</a>
             </li>
         </ol>

@@ -22,7 +22,7 @@
         <li class="breadcrumb-item"><a href="{{ route('bread.index') }}" style="
         color:black
         ">Dashboard</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Planos</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Clientes</a></li>
     </ol>
 
     <h1>Clientes/pagos<a href="{{ route('plans.pay')}}" class="btn btn-dark">ADD <i class="fas fa-plus"></i></a></h1>
