@@ -3,13 +3,15 @@
 @section('title', 'Cadastrar Novo Planos')
 
 @section('content_header')
+
 <h1 style="
 color:teal">Cadastrar Pagamentos do Clientes</h1>
 @stop
 
 @section('content')
+
 <div class="card">
-    <div class="card-body">
+    <div class="card-body" style="background-color: teal;">
         <form action="{{ route('plans.paypool')}}" method="POST">
             @csrf
             <div class="form-group">

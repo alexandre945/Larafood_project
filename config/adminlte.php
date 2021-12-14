@@ -232,11 +232,24 @@ return [
 
         ],
         [
-            'text' => 'Pagamentos ',
+            'text' => 'Ver/Pagamentos ',
             'url'  => 'plans/finance',
             'icon' =>  'fas fa-list-alt'
 
         ],
+        [
+            'text' => 'Cadastrar-Pagamentos ',
+            'url'  => 'plans/finance/create',
+            'icon' =>  'fas fa-list-alt'
+
+        ],
+        [
+            'text' => 'Cadastrar-Clientes ',
+            'url'  => 'plans/create',
+            'icon' =>  'fas fa-phone-square'
+
+        ],
+    
 
     ],
 
