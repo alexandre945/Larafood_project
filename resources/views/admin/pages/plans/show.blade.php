@@ -26,6 +26,9 @@
             <li>
                 <strong>Desciçâo:</strong> {{ $plan->description }}
             </li>
+            <li>
+                <strong>Dat:</strong> {{ $plan->created_at }}
+            </li>
         </ol>
         <form action="{{ route('plans.destroy',$plan->url)}}" method="post">
             @method('DELETE')

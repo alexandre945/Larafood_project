@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUpdatePlan;
 use Illuminate\Http\Request;
 use App\Models\Models\Finance;
 
@@ -42,12 +43,13 @@ class FinanceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+       public function store(StoreUpdatePlan $request)
+       
     {
         $data = $request->all();
         $this->repository->create($data);
         return redirect()->route('plans-finance');
-        //  return view('admin.pages.paypool', compact ('data'));
+       
     }
 
     /**

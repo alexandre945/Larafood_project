@@ -11,6 +11,7 @@ color:teal">Cadastrar Pagamentos do Clientes</h1>
 @section('content')
 
 <div class="card">
+@include('admin.includes.alerts')
     <div class="card-body" style="background-color: teal;">
         <form action="{{ route('plans.paypool')}}" method="POST">
             @csrf
