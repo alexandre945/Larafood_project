@@ -3,7 +3,7 @@
 @section('title', "Detalhes do Cliente")
 
 @section('content_header')
-<h1>Detalhes do Cliente</h1>
+<h1>Detalhes do Cliente "{{ $plan->name }}"</h1>
 <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ route('bread.index') }}">Dashboard</a></li>
     <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" class="">clientes</a></li>
