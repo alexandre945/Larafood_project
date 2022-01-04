@@ -25,8 +25,17 @@ class StoreUpdatePlan extends FormRequest
     {
         return [
             'name'=> 'required|min:3|max:220',
-            'description'=> 'nullable|min:2|max:220',
-            'price'=> 'nullable',
+            'description'=> 'required|min:2|max:220',
+            'price'=> 'required',
+        ];
+    }
+    public function messages()
+    {
+        return[
+            'name.required'=> 'o nome é obrigatorío',
+            'description.required'=> 'a descrição é obrigatoria',
+            'price.required'=> 'o preço é obrigatorio'
+
         ];
     }
 }

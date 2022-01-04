@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Cadastrar Novo Planos')
+@section('title', 'Cadastrar Novo cliente')
 
 @section('content_header')
     <h1 style="color: teal;">Cadatrar Novo Cliente</h1>
