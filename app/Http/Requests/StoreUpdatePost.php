@@ -25,6 +25,7 @@ class StoreUpdatePost extends FormRequest
     {
         return [
             'titl' => 'required|min:3|max:180',
+            'description'=> 'min:2|max:220',
             'content' => ['required', 'min:5', 'max:5000'],
         ];
     }

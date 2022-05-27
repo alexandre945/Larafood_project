@@ -3,7 +3,7 @@
 @section('title', 'Cadastrar Novo cliente')
 
 @section('content_header')
-    <h1 style="color: teal;">Cadatrar Novo Cliente</h1>
+    <h1 style="color: teal;">Cadastrar Novo Cliente</h1>
 @stop
 
 @section('content')

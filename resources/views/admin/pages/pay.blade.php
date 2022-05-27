@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Cadastrar Novo Planos')
+@section('title', 'Cadastrar Pagamento')
 
 @section('content_header')
 
@@ -10,13 +10,14 @@ color:teal">Cadastrar Pagamentos do Clientes</h1>
 
 @section('content')
 
+
+
 <div class="card">
     @include('admin.includes.alerts')
     <div class="card-body" style="background-color: teal;">
         <form action="{{ route('plans.paypool')}}" method="POST">
             @csrf
             <div class="form-group">
-
                 <label style="color:teal">Nome:</label>
                 <input type="text" name="name" class="form-control" placeholder="
                 Nome">
@@ -24,6 +25,10 @@ color:teal">Cadastrar Pagamentos do Clientes</h1>
             <div class="form-group">
                 <label style="color:teal">Preço:</label>
                 <input type="text" name="price" class="form-control" placeholder="Valor">
+            </div>
+            <div class="form-group">
+                <label style="color:teal">Descrição:</label>
+                <input type="text" name="description" class="form-control" placeholder="descrição" value="{{$plan->description ?? ''}}" >
             </div>
             <div class="form-group">
                 <label style="color:teal">Dia:</label>

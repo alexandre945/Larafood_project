@@ -53,6 +53,7 @@
                         <th>id</th>
                         <th>Nome</th>
                         <th>Preço</th>
+                        <th>Descrição</th>
                         <th>data</th>
                         <th>Açôes</th>
 
@@ -64,6 +65,7 @@
                         <td> {{ $plan->id }}</td>
                         <td> {{ $plan->name }}</td>
                         <td> {{ $plan->price }}</td>
+                        <td> {{ $plan->description }}</td>
                         <td> {{ $plan->created_at }}</td>
                         <td>
                             <a href="{{ route('plans.show',$plan->url)}}" class="btn btn-warning">Ver</a>

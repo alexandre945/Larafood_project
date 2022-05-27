@@ -20,6 +20,7 @@ class CreateFinancesTable extends Migration
             $table->date('date')->nullable();
             $table->date('month')->nullable();
             $table->year('year')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

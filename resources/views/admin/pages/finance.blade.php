@@ -12,7 +12,7 @@
 @section('title', 'Contabil')
 
 @section('content_header')
-    <h1>Cadatrar pagamentos</h1> 
+    <h1>Cadastrar pagamentos</h1> 
    
 @stop
 

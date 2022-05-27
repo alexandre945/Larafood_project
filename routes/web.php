@@ -12,7 +12,7 @@ route::get('/plans/edits/{id}', [FinanceController::class, 'edit'])->name('plans
 route::post('/plans/paypool',[FinanceController::class, 'store'])->name('plans.paypool');
 route::delete('/finance/destroy/{id}', [FinanceController::class, 'destroy'])->name('finance.destroy');
 route::get('/plans/finance', [FinanceController::class, 'index'])->name('plans-finance');
-route::get('plans/finance/create', [FinanceController::class, 'create'])->name('plans-finace-create');
+route::get('/plans/finance/create', [FinanceController::class, 'create'])->name('plans-finace-create');
 
 route::get('/plans/create', [PlanController::class, 'create'])->name('plans.create');
 route::put('/plans/update/{url}',[PlanController::class, 'update'])->name('plans.update');

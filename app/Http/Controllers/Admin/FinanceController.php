@@ -32,10 +32,17 @@ class FinanceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function create()
     {
-        return view('admin.pages.pay');
+        
+         $this->repository->all();
+           
+            return view('admin.pages.pay');  
+        
     }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -46,9 +53,15 @@ class FinanceController extends Controller
        public function store(StoreUpdatePlan $request)
        
     {
-        $data = $request->all();
-        $this->repository->create($data);
+        $name = $request->name;
+        if(!$name){
+            $data = $request->all();
+            $this->repository->create($data);
         return redirect()->route('plans-finance');
+        }else{
+            return redirect()->route('plans-finance')->with('mensagem', 'usuario nâo exite');
+        }
+       
        
     }
 

@@ -15,22 +15,23 @@
 
     @section('content_header')
 
-    <div class="header" style="background-color: teal">
-        <h1 style="padding-top: 10px;">Pagamentos<a href="{{ route('plans-finace-create')}}" class="btn btn-dark">ADD <i
-                    class="fas fa-plus"></i></a></h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('bread.index') }}" style="color:black">Dashboard</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Clientes</a>
-            </li>
-            <li class="breadcrumb-item active"><a href="{{ route('plans-finance') }}" style="color:black">Pagamentos</a>
-            </li>
-        </ol>
-
+    @if (session('mensagem'))
+    <div class="alert alert-warning">
+        {{ session('mensagem') }}
     </div>
+@endif
 
-
-
-
+            <div class="text-center pt-3 pb-2 " style="background-color: teal">
+                <h1 class="pf-10">Pagamentos<a href="{{ route('plans-finace-create')}}" class="btn btn-dark">ADD <i
+                            class="fas fa-plus"></i></a></h1>
+                                <ol class="breadcrumb ">
+                                    <li class="breadcrumb-item"><a href="{{ route('bread.index') }}" style="color:black">Dashboard</a></li>
+                                    <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" style="color:black">Clientes</a>
+                                    </li>
+                                    <li class="breadcrumb-item active"><a href="{{ route('plans-finance') }}" style="color:black">Pagamentos</a>
+                                    </li>
+                                </ol>
+            </div>
     @stop
 
     @section('content')
@@ -42,6 +43,7 @@
                         <th>id</th>
                         <th>Nome</th>
                         <th>Preço</th>
+                        <th>Descrição</th>
                         <th>data/pagamento</th>
                         <th style="width: 100px;">Açôes</th>
                     </tr>
@@ -52,6 +54,7 @@
                         <td> {{ $finance->id }}</td>
                         <td> {{ $finance->name }}</td>
                         <td> {{ $finance->price }}</td>
+                        <td> {{ $finance->description }} </td>
                         <td> {{ $finance->date }}</td>
                         <td>
                             <form action="{{ route('finance.destroy',$finance->id )}}" method="post">
@@ -68,14 +71,9 @@
                     </tr>
                     @endforeach
                 </tbody>
-
             </table>
         </div>
-
     </div>
     @stop
-
-
 </body>
-
 </html>
